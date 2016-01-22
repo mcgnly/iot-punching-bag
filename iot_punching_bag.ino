@@ -161,14 +161,9 @@ void mqtt_connect() {
 
 void blink(int interval) {
   if (millis() - lastBlinkTime > interval) {
-    //Save the last time you blinked the LED
-    lastBlinkTime = millis();
-    if (ledState == LOW)
-      ledState = HIGH;
-    else
-      ledState = LOW;
-    //Set the LED with the ledState of the variable:
-    digitalWrite(led, ledState);
+    digitalWrite(led, HIGH);  // Turn ON the LED
+    delay(500);              // Wait for 500mS = .5 second
+    digitalWrite(led, LOW);
   }
 }
 
